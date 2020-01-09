@@ -14,3 +14,11 @@
         test_role_var2: 'test_var2_local'
     - debug: var=test_role_var1
     - debug: var=test_role_var2
+
+- name: play2
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - debug: var=test_role_var1
+    - debug: var=test_role_var2
