@@ -2,6 +2,16 @@
 A repository to demonstrate the difference in using vars with `include_role`
 and `import_role`.
 
+Usage
+=====
+
+```
+git clone https://github.com/krsacme/ansible-include-vs-import.git
+cd ansible-include-vs-import
+ansible-playbook -vv import.yaml
+ansible-playbook -vv include.yaml
+```
+
 import
 =====
 When using vars in `import_role` like below, the vars are applied globally
