@@ -1,0 +1,61 @@
+ansible-playbook 2.9.1
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/home/saravanan/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.7.5 (default, Oct 17 2019, 12:16:48) [GCC 9.2.1 20190827 (Red Hat 9.2.1-1)]
+Using /etc/ansible/ansible.cfg as config file
+
+PLAYBOOK: import.yaml *******************************************************************************************************************************************************
+1 plays in import.yaml
+
+PLAY [localhost] ************************************************************************************************************************************************************
+META: ran handlers
+
+TASK [debug] ****************************************************************************************************************************************************************
+task path: /home/saravanan/KRS/work/ansible/working/test/include_vs_import/import.yaml:8
+ok: [localhost] => {
+    "test_role_var1": "test_var1_local"
+}
+
+TASK [debug] ****************************************************************************************************************************************************************
+task path: /home/saravanan/KRS/work/ansible/working/test/include_vs_import/import.yaml:9
+ok: [localhost] => {
+    "test_role_var2": "test_var2_local"
+}
+
+TASK [test-role : debug] ****************************************************************************************************************************************************
+task path: /home/saravanan/KRS/work/ansible/working/test/include_vs_import/roles/test-role/tasks/main.yaml:2
+ok: [localhost] => {
+    "msg": "incude test-role"
+}
+
+TASK [test-role : debug] ****************************************************************************************************************************************************
+task path: /home/saravanan/KRS/work/ansible/working/test/include_vs_import/roles/test-role/tasks/main.yaml:3
+ok: [localhost] => {
+    "test_role_var1": "test_var1_local"
+}
+
+TASK [test-role : debug] ****************************************************************************************************************************************************
+task path: /home/saravanan/KRS/work/ansible/working/test/include_vs_import/roles/test-role/tasks/main.yaml:4
+ok: [localhost] => {
+    "test_role_var2": "test_var2_local"
+}
+
+TASK [debug] ****************************************************************************************************************************************************************
+task path: /home/saravanan/KRS/work/ansible/working/test/include_vs_import/import.yaml:15
+ok: [localhost] => {
+    "test_role_var1": "test_var1_local"
+}
+
+TASK [debug] ****************************************************************************************************************************************************************
+task path: /home/saravanan/KRS/work/ansible/working/test/include_vs_import/import.yaml:16
+ok: [localhost] => {
+    "test_role_var2": "test_var2_local"
+}
+META: ran handlers
+META: ran handlers
+
+PLAY RECAP ******************************************************************************************************************************************************************
+localhost                  : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
